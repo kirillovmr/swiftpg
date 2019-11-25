@@ -67,4 +67,8 @@ label: do {
 
 print ("hey")
 
-1 + 2
+import Foundation
+
+var a = 2.05 * sqrt(0.75*0.25/60)
+var b = 0.75 - a
+var c = 0.75 + a

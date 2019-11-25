@@ -31,5 +31,10 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    // For Test
+    func dogMyCats(_ s:String) -> String {
+        return "dogs"
+    }
+    
 }
 

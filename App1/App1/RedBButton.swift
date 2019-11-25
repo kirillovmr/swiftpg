@@ -20,7 +20,7 @@ class RedBButton: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        self.backgroundColor = .red
+        self.backgroundColor = .red
     }
     
     @IBInspectable var borderWidthzalupa : CGFloat {
