@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		C60642BA238BB0960000B85C /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60642B9238BB0960000B85C /* HUD.swift */; };
 		C60642BD238BB3C80000B85C /* PlayerPath.sks in Resources */ = {isa = PBXBuildFile; fileRef = C60642BB238BB3C80000B85C /* PlayerPath.sks */; };
+		C60642DF238C6A890000B85C /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60642DE238C6A890000B85C /* MenuScene.swift */; };
+		C60642E1238CB6020000B85C /* Crate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60642E0238CB6020000B85C /* Crate.swift */; };
+		C60642E4238CB7070000B85C /* HeartExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = C60642E2238CB7070000B85C /* HeartExplosion.sks */; };
+		C60642E8238CB7B90000B85C /* CrateExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = C60642E6238CB7B90000B85C /* CrateExplosion.sks */; };
+		C60642EB238CB8510000B85C /* ParticlePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60642EA238CB8510000B85C /* ParticlePool.swift */; };
 		C6111F4E2388DE8A006472CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6111F4D2388DE8A006472CF /* AppDelegate.swift */; };
 		C6111F502388DE8A006472CF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C6111F4F2388DE8A006472CF /* GameScene.sks */; };
 		C6111F522388DE8A006472CF /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C6111F512388DE8A006472CF /* Actions.sks */; };
@@ -48,6 +53,11 @@
 /* Begin PBXFileReference section */
 		C60642B9238BB0960000B85C /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		C60642BB238BB3C80000B85C /* PlayerPath.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayerPath.sks; sourceTree = "<group>"; };
+		C60642DE238C6A890000B85C /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		C60642E0238CB6020000B85C /* Crate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crate.swift; sourceTree = "<group>"; };
+		C60642E2238CB7070000B85C /* HeartExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeartExplosion.sks; sourceTree = "<group>"; };
+		C60642E6238CB7B90000B85C /* CrateExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CrateExplosion.sks; sourceTree = "<group>"; };
+		C60642EA238CB8510000B85C /* ParticlePool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlePool.swift; sourceTree = "<group>"; };
 		C6111F4A2388DE8A006472CF /* game1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6111F4D2388DE8A006472CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6111F4F2388DE8A006472CF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -118,14 +128,15 @@
 				C6111F4D2388DE8A006472CF /* AppDelegate.swift */,
 				C6111F4F2388DE8A006472CF /* GameScene.sks */,
 				C6111F512388DE8A006472CF /* Actions.sks */,
+				C6111F552388DE8A006472CF /* GameViewController.swift */,
 				C6B3E925238B591C006CE6FA /* EncounterManager.swift */,
+				C60642DE238C6A890000B85C /* MenuScene.swift */,
 				C6111F532388DE8A006472CF /* GameScene.swift */,
 				C6B3E8DA238B063D006CE6FA /* GameSprite.swift */,
 				C6B3E922238B568B006CE6FA /* Encounters */,
 				C6B3E921238B5084006CE6FA /* Player */,
 				C6B3E918238B4CE0006CE6FA /* Enemies */,
 				C6B3E915238B4C40006CE6FA /* Env */,
-				C6111F552388DE8A006472CF /* GameViewController.swift */,
 				C6111F572388DE8A006472CF /* Main.storyboard */,
 				C6111F5A2388DE8B006472CF /* Assets.xcassets */,
 				C6111F5C2388DE8B006472CF /* LaunchScreen.storyboard */,
@@ -138,9 +149,13 @@
 			isa = PBXGroup;
 			children = (
 				C6B3E913238B4301006CE6FA /* Background.swift */,
+				C60642E2238CB7070000B85C /* HeartExplosion.sks */,
+				C60642EA238CB8510000B85C /* ParticlePool.swift */,
+				C60642E6238CB7B90000B85C /* CrateExplosion.sks */,
 				C60642BB238BB3C80000B85C /* PlayerPath.sks */,
 				C60642B9238BB0960000B85C /* HUD.swift */,
 				C6B3E8DE238B08BC006CE6FA /* Ground.swift */,
+				C60642E0238CB6020000B85C /* Crate.swift */,
 				C6B3E916238B4C5E006CE6FA /* Star.swift */,
 				C6B3E91F238B4EB6006CE6FA /* Coin.swift */,
 			);
@@ -252,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C60642E4238CB7070000B85C /* HeartExplosion.sks in Resources */,
 				C6B3E929238B5AC7006CE6FA /* EncounterB.sks in Resources */,
 				C6111F592388DE8A006472CF /* Main.storyboard in Resources */,
 				C6111F502388DE8A006472CF /* GameScene.sks in Resources */,
@@ -259,6 +275,7 @@
 				C6111F5B2388DE8B006472CF /* Assets.xcassets in Resources */,
 				C6B3E924238B56A1006CE6FA /* EncounterA.sks in Resources */,
 				C6111F5E2388DE8B006472CF /* LaunchScreen.storyboard in Resources */,
+				C60642E8238CB7B90000B85C /* CrateExplosion.sks in Resources */,
 				C60642BD238BB3C80000B85C /* PlayerPath.sks in Resources */,
 				C6111F522388DE8A006472CF /* Actions.sks in Resources */,
 			);
@@ -296,8 +313,11 @@
 				C6B3E920238B4EB6006CE6FA /* Coin.swift in Sources */,
 				C6B3E8E1238B0C93006CE6FA /* Player.swift in Sources */,
 				C6111F562388DE8A006472CF /* GameViewController.swift in Sources */,
+				C60642DF238C6A890000B85C /* MenuScene.swift in Sources */,
+				C60642E1238CB6020000B85C /* Crate.swift in Sources */,
 				C6B3E91C238B4DF5006CE6FA /* Bat.swift in Sources */,
 				C6111F4E2388DE8A006472CF /* AppDelegate.swift in Sources */,
+				C60642EB238CB8510000B85C /* ParticlePool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

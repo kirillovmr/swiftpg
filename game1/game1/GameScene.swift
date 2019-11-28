@@ -15,6 +15,7 @@ enum PhysicsCategory: UInt32 {
     case enemy = 8
     case coin = 16
     case powerup = 32
+    case crate = 64 
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -25,6 +26,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let hud = HUD()
     
     let powerUpStar = Star()
+    
+    let particlePool = ParticlePool()
+    
+    let heartCrate = Crate()
     
     let encounterManager = EncounterManager()
     var nextEncounterSpawnPosition = CGFloat(150)
@@ -96,6 +101,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // so they trail behind as the player moves forward.
             dotEmitter.targetNode = self
         }
+        
+        // Add emitter nodes to GameScene node tree:
+        particlePool.addEmittersToScene(scene: self)
+        
+        // Spawn the heart crate, out of the way for now
+        self.addChild(heartCrate)
+        heartCrate.position = CGPoint(x: -2100, y: -2100)
+        heartCrate.turnToHeartCrate()
+    }
+    
+    func gameOver() {
+        // Show the restart and main menu buttons:
+        hud.showButtons()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -135,6 +153,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case PhysicsCategory.powerup.rawValue:
             print("start the power-up")
             player.starPower()
+        case PhysicsCategory.crate.rawValue:
+            if let crate = otherBody.node as? Crate {
+                // Call the explode function with a reference
+                // to the GameScene:
+                crate.explode(gameScene: self)
+            }
         default:
             print("contact with no game logic")
         }
@@ -152,6 +176,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if let gameSprite = nodeTouched as? GameSprite {
                 // If this node adheres to GameSprite, call onTap:
                 gameSprite.onTap()
+            }
+            
+            // Check for HUD buttons:
+            if nodeTouched.name == "restartGame" {
+                // Transition to a new version of the GameScene
+                // to restart the game:
+                self.view?.presentScene(
+                    GameScene(size: self.size),
+                    transition: .crossFade(withDuration: 0.6))
+            }
+            else if nodeTouched.name == "returnToMenu" {
+                // Transition to the main menu scene:
+                self.view?.presentScene(
+                    MenuScene(size: self.size),
+                    transition: .crossFade(withDuration: 0.6))
             }
         }
         
@@ -198,8 +237,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             nextEncounterSpawnPosition += 900
             
             // Each encounter has a 10% chance to spawn a star:
-            //let starRoll = Int(arc4random_uniform(10))
-            let starRoll = 0
+            let starRoll = Int(arc4random_uniform(10))
             if starRoll == 0 {
                 // Only move the star if it is off the screen.
                 if abs(player.position.x - powerUpStar.position.x) > 900 {
@@ -210,6 +248,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     powerUpStar.physicsBody?.angularVelocity = 0
                     powerUpStar.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
                 }
+            }
+            if starRoll >= 1 {
+                // Position the heart crate after this encounter:
+                heartCrate.reset()
+                heartCrate.position = CGPoint(x: nextEncounterSpawnPosition, y: 270)
             }
         }
     }
