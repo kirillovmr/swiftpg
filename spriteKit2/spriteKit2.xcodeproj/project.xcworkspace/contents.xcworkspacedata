@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../spriteKit2/sprites.atlas"
+      name = "sprites.atlas">
+      <FileRef
+         location = "group:PowerUpBlue@3x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole0@3x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole2@2x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole2@3x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole0@2x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole4@2x.png">
+      </FileRef>
+      <FileRef
+         location = "group:PowerUp.png">
+      </FileRef>
+      <FileRef
+         location = "group:Player@3x.png">
+      </FileRef>
+      <FileRef
+         location = "group:Player@2x.png">
+      </FileRef>
+      <FileRef
+         location = "group:PowerUp@2x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole4@3x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole3@2x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole1@3x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole1@2x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole3@3x.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole4.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole1.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole0.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole2.png">
+      </FileRef>
+      <FileRef
+         location = "group:Player.png">
+      </FileRef>
+      <FileRef
+         location = "group:BlackHole3.png">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "self:spriteKit2.xcodeproj">
+   </FileRef>
+</Workspace>

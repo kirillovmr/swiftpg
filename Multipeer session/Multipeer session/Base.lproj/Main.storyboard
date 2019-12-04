@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="Multipeer_session" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BjO-1o-Gor" appends="YES" id="Ttz-Mm-IvL"/>
+                                </connections>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKK-vd-huv">
+                                <rect key="frame" x="66" y="258" width="90" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Host">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rt8-Ah-fEw">
+                                <rect key="frame" x="272" y="258" width="90" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Join">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiR-lb-MWU" customClass="RoundedButton" customModule="Multipeer_session" customModuleProvider="target">
+                                <rect key="frame" x="150" y="589" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send World Map"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mapping Status Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jth-C5-n1E">
+                                <rect key="frame" x="124" y="549" width="167" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7w-uR-yLd" userLabel="Session Info View">
+                                <rect key="frame" x="20" y="28" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="SbX-QU-J2c">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Initializing AR Session." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SB-ii-Gmr">
+                                            <rect key="frame" x="21" y="29" width="171" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2SB-ii-Gmr" secondAttribute="bottom" constant="8" id="02g-9J-o2b"/>
+                                    <constraint firstAttribute="trailing" secondItem="SbX-QU-J2c" secondAttribute="trailing" constant="14" id="3jq-Mr-iYY"/>
+                                    <constraint firstItem="2SB-ii-Gmr" firstAttribute="top" secondItem="J7w-uR-yLd" secondAttribute="top" constant="8" id="7fK-JY-839"/>
+                                    <constraint firstItem="SbX-QU-J2c" firstAttribute="leading" secondItem="J7w-uR-yLd" secondAttribute="leading" constant="8" id="DOb-s2-sMm"/>
+                                    <constraint firstAttribute="bottom" secondItem="SbX-QU-J2c" secondAttribute="bottom" constant="8" id="Mpe-mn-e6B"/>
+                                    <constraint firstAttribute="trailing" secondItem="2SB-ii-Gmr" secondAttribute="trailing" constant="14" id="bSh-7t-tX9"/>
+                                    <constraint firstItem="SbX-QU-J2c" firstAttribute="top" secondItem="J7w-uR-yLd" secondAttribute="top" constant="8" id="lSz-1S-knJ"/>
+                                    <constraint firstItem="2SB-ii-Gmr" firstAttribute="leading" secondItem="J7w-uR-yLd" secondAttribute="leading" constant="8" id="nKG-k9-mbd"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                    </view>
+                    <connections>
+                        <outlet property="HostButton" destination="BKK-vd-huv" id="ofr-vS-iOD"/>
+                        <outlet property="JoinButton" destination="Rt8-Ah-fEw" id="ab4-Yg-cLP"/>
+                        <outlet property="MappingStatusLabel" destination="jth-C5-n1E" id="bCe-vT-899"/>
+                        <outlet property="SendMapButton" destination="XiR-lb-MWU" id="OS1-kR-vZN"/>
+                        <outlet property="SessionInfoLabel" destination="2SB-ii-Gmr" id="yiX-jh-7Hi"/>
+                        <outlet property="TapRecognizer" destination="BjO-1o-Gor" id="4Bo-2N-IhS"/>
+                        <outlet property="hostButton" destination="BKK-vd-huv" id="1mf-G3-YqS"/>
+                        <outlet property="joinButton" destination="Rt8-Ah-fEw" id="2E5-FC-ZAr"/>
+                        <outlet property="mappingStatusLabel" destination="jth-C5-n1E" id="Lng-Pe-iIe"/>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="sendMapButton" destination="XiR-lb-MWU" id="3fw-Mr-prX"/>
+                        <outlet property="sessionInfoLabel" destination="2SB-ii-Gmr" id="unw-e3-i8n"/>
+                        <outlet property="sessionInfoView" destination="J7w-uR-yLd" id="cPj-MC-mnG"/>
+                        <outlet property="tapRecogniser" destination="BjO-1o-Gor" id="zUU-FC-y4M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BjO-1o-Gor"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="127.90178571428571"/>
+        </scene>
+    </scenes>
+</document>

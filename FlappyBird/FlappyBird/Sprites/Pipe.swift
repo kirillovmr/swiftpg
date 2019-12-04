@@ -10,7 +10,7 @@ import SpriteKit
 
 class Pipe: SKSpriteNode {
     var textureAtlas = SKTextureAtlas(named: "Environment")
-    let distToUpper: CGFloat = 130
+    let distToUpper: CGFloat = 110
     
     func createChildren() {
         let texture = textureAtlas.textureNamed("pipe-green")
